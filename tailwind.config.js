@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: ["./src/**/*.{html,js}", "./src/img/*.{jpg,svg}"],
   theme: {
     screens: {
       sm: "640px",
@@ -19,7 +19,8 @@ module.exports = {
         "mm-baby-powder": "#f7f7f2ff",
       },
       backgroundImage: {
-        "bg-image": "url('/src/img/wave-bg.svg')",
+        "bg-image": "url('./img/wave-bg.svg')",
+        "nav-bg": "url('./img/nav-bg4.svg')",
       },
     },
   },
