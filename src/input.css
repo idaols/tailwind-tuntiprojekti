@@ -15,6 +15,25 @@
     clip-path: polygon(0 40%, 100% 36%, 100% 100%, 0 97%);
 }
 
+/*Omaa CSS*/
+
+#msg-input {
+    display: none;
+}
+
+#leaveBtn {
+    display: none;
+}
+
+#roomDiv {
+    display: none;
+}
+
+hr {
+    border: 0.5px solid #71D8F5;
+    margin: 0.5rem 1.25rem 0.8rem 0;
+}
+
 
 @tailwind base;
 @tailwind components;
