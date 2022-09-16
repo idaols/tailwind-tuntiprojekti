@@ -8,6 +8,13 @@
       rel="stylesheet"
       href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css"
     />
+    <link href="https://vjs.zencdn.net/7.20.2/video-js.css" rel="stylesheet" />
+    <!-- Fantasy -->
+    <link
+      href="https://unpkg.com/@videojs/themes@1/dist/fantasy/index.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="video.css" />
   </head>
 
   <body class="bg-white">
@@ -21,8 +28,7 @@
       >
         <button
           data-collapse-toggle="navbar-default"
-          type="button"
-          class="inline-flex items-center p-2 ml-3 text-sm text-mm-fiery-rose rounded-lg md:hidden hover:text-mm-sky-blue-crayola"
+          class="inline-flex items-center p-2 ml-3 text-sm text-mm-fiery-rose bg-mm-key-lime rounded-lg md:hidden hover:bg-mm-fiery-rose hover:text-mm-key-lime"
           aria-controls="navbar-default"
           aria-expanded="false"
         >
@@ -89,7 +95,10 @@
         <h3 class="text-xl font-semibold text-white">
           Tähän tulee tapahtuman mahtava slogan!
         </h3>
-        <div class="btn-yellow w-fit mt-3">Live stream</div>
+        <button class="btn-yellow w-fit mt-3" data-modal-toggle="defaultModal">
+          Live stream
+        </button>
+        <!-- <div class="btn-yellow w-fit mt-3">Live stream</div> -->
       </div>
       <div class="flex justify-center flex-col lg:flex-row z-1">
         <div class="infoBox basis-1/3">
@@ -137,7 +146,69 @@
           </p>
         </div>
       </div>
+
+      <!-- Main modal -->
+      <div
+        id="defaultModal"
+        tabindex="-1"
+        aria-hidden="true"
+        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center"
+      >
+        <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
+          <!-- Modal content -->
+          <div class="relative bg-white rounded-lg shadow">
+            <!-- Modal header -->
+            <div
+              class="flex justify-between items-start p-4 rounded-t border-b"
+            >
+              <h3 class="text-xl font-semibold text-mm-fiery-rose">
+                Live stream
+              </h3>
+              <button
+                class="text-mm-fiery-rose bg-mm-key-lime hover:bg-mm-fiery-rose hover:text-mm-key-lime rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+                data-modal-toggle="defaultModal"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <span class="sr-only">Close modal</span>
+              </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-6 space-y-6">
+              <p class="text-base leading-relaxed text-mm-dark-sienna">moi</p>
+              <video id="my-video" class="video-js vjs-theme-fantasy vjs-ida">
+                <source src="/dist/img/video.mp4" type="video/mp4" />
+                <!-- <source
+                  src="http://195.148.104.124:1935/jakelu/tailwind/playlist.m3u8"
+                  type="application/x-mpegURL"
+                /> -->
+                <p class="vjs-no-js">
+                  To view this video please enable JavaScript, and consider
+                  upgrading to a web browser that
+                  <a
+                    href="https://videojs.com/html5-video-support/"
+                    target="_blank"
+                    >supports HTML5 video</a
+                  >
+                </p>
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
     <div
       class="bg-mm-fiery-rose p-1 h-28 flex justify-center items-center flex-col text-white"
     >
@@ -148,5 +219,22 @@
     </div>
 
     <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+    <script src="https://vjs.zencdn.net/7.20.2/video.min.js"></script>
+
+    <script>
+      let myPlayer = document.querySelector(".video-js");
+
+      console.log(myPlayer);
+
+      videojs(myPlayer, {
+        controls: true,
+        loop: true,
+        autoplay: false,
+        preload: "auto",
+        fluid: true,
+        poster: "../dist/img/banner2.jpg",
+        aspectRatio: "16:9",
+      });
+    </script>
   </body>
 </html>
