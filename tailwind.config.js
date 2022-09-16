@@ -17,6 +17,7 @@ module.exports = {
         "mm-dark-sienna": "#2d0001ff",
         "mm-sky-blue-crayola": "#71d8f5ff",
         "mm-baby-powder": "#f7f7f2ff",
+        "mm-white": "rgb(255,255,255)",
       },
       backgroundImage: {
         "bg-image": "url('./img/wave-bg.svg')",
