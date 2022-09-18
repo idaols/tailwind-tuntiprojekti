@@ -22,6 +22,7 @@ module.exports = {
       backgroundImage: {
         "bg-image": "url('./img/wave-bg.svg')",
         "nav-bg": "url('./img/nav-bg4.svg')",
+        "little-wave": "url('./img/testii.svg')",
       },
     },
   },

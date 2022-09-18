@@ -4,6 +4,10 @@
   margin: 0.1rem 1.25rem 0.8rem 0;
 }
 
+.littleWave {
+  height: 50px;
+}
+
 .footerhr {
   width: 97%;
   border: 0.5px solid white;
