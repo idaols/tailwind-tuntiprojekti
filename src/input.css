@@ -46,15 +46,15 @@ hr {
 
 @media (min-width: 1024px) {
   .desktopLive {
-    top: 26.5rem;
+    top: 27rem;
     right: 5rem;
     padding: 25px !important;
     font-size: 1.5em !important;
-    box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px,
+    /* box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px,
       rgba(255, 255, 255, 0.12) 0px -12px 30px,
       rgba(255, 255, 255, 0.12) 0px 4px 6px,
       rgba(255, 255, 255, 0.17) 0px 12px 13px,
-      rgba(255, 255, 255, 0.09) 0px -3px 5px;
+      rgba(255, 255, 255, 0.09) 0px -3px 5px; */
     border-radius: 20px !important;
   }
 }
